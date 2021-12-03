@@ -1,0 +1,5 @@
+
+npm i express bcryptjs jsonwebtoken config express-validator mongoose
+ 
+-----dev depency 
+npm i -D nodemon concurrently 
