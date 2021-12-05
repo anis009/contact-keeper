@@ -3,3 +3,9 @@ npm i express bcryptjs jsonwebtoken config express-validator mongoose
  
 -----dev depency 
 npm i -D nodemon concurrently 
+
+//after deleting .gitignore file and readme.md
+
+go client folder
+
+and run this comman "rm -rf .git";
