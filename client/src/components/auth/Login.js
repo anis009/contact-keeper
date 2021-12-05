@@ -11,7 +11,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (isAuthenticated) {
-			navigate("/");
+			window.location.href = "/";
 		}
 		if (error === "Invalid Credentials") {
 			setAlert(error, "danger");

@@ -7,17 +7,18 @@ import Contacts from "../contacts/Contacts";
 
 const Home = () => {
 	const authContext = useContext(AuthContext);
-	const { isAuthenticated, loading } = authContext;
+	const { isAuthenticated, loading, loadUser } = authContext;
 	const navigate = useNavigate();
+
 	useEffect(() => {
-		if (isAuthenticated) {
-			authContext.loadUser();
-		} else if (!isAuthenticated && !loading) {
-			// navigate("/login");
-			console.log("logout me");
-			window.location.href = "/login";
+		if (!localStorage.getItem("token")) {
+			navigate("/login");
+		}
+		if (localStorage.getItem("token")) {
+			loadUser();
 		}
 	}, [isAuthenticated, loading]);
+
 	return (
 		<div className="grid-2">
 			<div>

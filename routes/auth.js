@@ -33,8 +33,11 @@ router.post(
 	],
 	async (req, res) => {
 		const errors = validationResult(req);
+
 		if (!errors.isEmpty()) {
-			return res.status(400).json({ errors: errors.array() });
+			// console.log(errors.array());
+			// const me = errors.array();
+			return res.status(400).json({ errors: errors.array(0) });
 		}
 
 		const { email, password } = req.body;

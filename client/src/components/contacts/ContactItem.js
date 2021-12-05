@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ContactContext from "../../context/contact/contactContext";
 const ContactItem = ({ contact }) => {
-	const { id, email, name, phone, type } = contact;
+	const { _id, email, name, phone, type } = contact;
 	const contactContext = useContext(ContactContext);
 	const { deleteContact, setCurrent, clearCurrent } = contactContext;
 	const onDelete = () => {
-		// console.log("id", id);
-		deleteContact(id);
+		// console.log("id", id)
+		deleteContact(_id);
 		clearCurrent();
 	};
 	return (
@@ -21,7 +21,7 @@ const ContactItem = ({ contact }) => {
 					}
 					style={{ float: "right" }}
 				>
-					{type.charAt(0).toUpperCase() + type.slice(1)}
+					{type ? type.charAt(0).toUpperCase() + type.slice(1) : type}
 				</span>
 			</h3>
 			<ul>

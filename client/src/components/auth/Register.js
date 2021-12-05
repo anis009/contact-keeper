@@ -12,7 +12,8 @@ const Register = (props) => {
 
 	useEffect(() => {
 		if (isAuthenticated) {
-			navigate("/");
+			// navigate("/");
+			window.location.href = "/";
 		}
 		if (error === "User already exists") {
 			setAlert(error, "danger");
@@ -67,6 +68,7 @@ const Register = (props) => {
 						name="password"
 						onChange={onChange}
 						value={password}
+						minLength={6}
 					/>
 				</div>
 				<div className="form-group">
@@ -76,6 +78,7 @@ const Register = (props) => {
 						name="password2"
 						onChange={onChange}
 						value={password2}
+						minLength={6}
 					/>
 				</div>
 				<input

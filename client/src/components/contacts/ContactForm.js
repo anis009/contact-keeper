@@ -50,6 +50,7 @@ const ContactForm = () => {
 				name="name"
 				value={name}
 				onChange={onChange}
+				minLength={2}
 			/>
 			<input
 				type="email"
